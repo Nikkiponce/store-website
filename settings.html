@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Gadgets - Settings</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional inline styles for demonstration */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="checkbox"],
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Success message */
+        .success-message {
+            display: none;
+            background-color: #dff0d8; /* Green background */
+            color: #3c763d; /* Dark green text */
+            border: 1px solid #d6e9c6; /* Light green border */
+            padding: 15px; /* Padding around the message */
+            margin-top: 10px; /* Space above the message */
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="settings">
+            <div class="content">
+                <h2>Settings</h2>
+                <div>
+                    <h3>Account Settings</h3>
+                    <form id="account-form">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <button type="submit">Update Account</button>
+                    </form>
+                    <div id="account-success" class="success-message">
+                        Account updated successfully!
+                    </div>
+                </div>
+                <div>
+                    <h3>Notification Settings</h3>
+                    <form id="notification-form">
+                        <label for="notifications">Receive Notifications:</label>
+                        <input type="checkbox" id="notifications" name="notifications">
+                        <button type="submit">Update Notifications</button>
+                    </form>
+                    <div id="notification-success" class="success-message">
+                        Notification settings updated!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script>
+        // JavaScript to handle form submission and success message display
+        document.addEventListener('DOMContentLoaded', function() {
+            const accountForm = document.getElementById('account-form');
+            const notificationForm = document.getElementById('notification-form');
+            const accountSuccessMessage = document.getElementById('account-success');
+            const notificationSuccessMessage = document.getElementById('notification-success');
+
+            // Submit event listener for account form
+            accountForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Simulate form submission (in real scenario, this would be an AJAX request)
+                // For demonstration purposes, just show success message
+                accountSuccessMessage.style.display = 'block';
+                // Optional: You can reset the form fields after successful submission
+                accountForm.reset();
+                // Hide success message after a few seconds (optional)
+                setTimeout(function() {
+                    accountSuccessMessage.style.display = 'none';
+                }, 3000); // Hide after 3 seconds (3000 milliseconds)
+            });
+
+            // Submit event listener for notification form
+            notificationForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Simulate form submission (in real scenario, this would be an AJAX request)
+                // For demonstration purposes, just show success message
+                notificationSuccessMessage.style.display = 'block';
+                // Optional: You can reset the form fields after successful submission
+                notificationForm.reset();
+                // Hide success message after a few seconds (optional)
+                setTimeout(function() {
+                    notificationSuccessMessage.style.display = 'none';
+                }, 3000); // Hide after 3 seconds (3000 milliseconds)
+            });
+        });
+    </script>
+</body>
+</html>
